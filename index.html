@@ -3,263 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leadership Team | SmarTex Compression Therapy</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary-blue: #00a8e8;
-            --dark-blue: #003d5b;
-            --accent-cyan: #00d4ff;
-            --dark-bg: #0a0f1a;
-            --light-gray: #f8f9fa;
-            --text-gray: #6c757d;
-            --border-gray: #e0e0e0;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            color: #1a1a1a;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
-        }
-
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav .logo {
-            height: 40px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #1a1a1a;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary-blue);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 50vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a2332 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-            padding-top: 80px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, var(--primary-blue) 0%, transparent 70%);
-            opacity: 0.15;
-            top: -200px;
-            right: -200px;
-            animation: pulse 8s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.15; }
-            50% { transform: scale(1.2); opacity: 0.25; }
-        }
-
-        .hero .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, white, var(--accent-cyan));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-top: 1rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Team Section */
-        .team {
-            background: white;
-            padding: 6rem 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark-bg);
-            text-align: center;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-bottom: 4rem;
-            text-align: center;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .team-card {
-            background: var(--light-gray);
-            padding: 2.5rem;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
-        }
-
-        .team-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .team-avatar {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            border-radius: 8px;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-            font-weight: 700;
-        }
-
-        .team-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark-bg);
-        }
-
-        .team-card .role {
-            color: var(--primary-blue);
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .team-card .bio {
-            font-size: 1rem;
-            color: var(--text-gray);
-            line-height: 1.6;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark-bg);
-            color: rgba(255, 255, 255, 0.7);
-            text-align: center;
-            padding: 2rem 0;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-        }
-
-        footer a {
-            color: var(--primary-blue);
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: var(--accent-cyan);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <title>SmarTex Compression Therapy | Next-Generation Medical Devices</title>
+    <link rel="stylesheet" href="style.css?v=3.7">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <a href="smartex-website.html"><img src="smartex-logo.png" alt="SmarTex Logo" class="logo"></a>
+            <div></div>
             <ul>
-                <li><a href="smartex-website.html#about">About</a></li>
-                <li><a href="smartex-website.html#solution">Solution</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#solution">Solution</a></li>
                 <li><a href="smartex-team.html">Team</a></li>
-                <li><a href="smartex-website.html#contact">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -267,17 +23,125 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Leadership Team</h1>
-            <p>Multidisciplinary expertise in biomedical engineering, clinical medicine, and commercialization driving breakthrough compression therapy innovation</p>
+            <div class="hero-content">
+                <div class="hero-logo-container">
+                    <div class="logo-circle circle-1"></div>
+                    <div class="logo-circle circle-2"></div>
+                    <div class="logo-circle circle-3"></div>
+                    <div class="logo-text-wrapper">
+                        <span class="logo-main-text">SmarTex</span>
+                        <span class="logo-sub-text">Compression Therapies</span>
+                    </div>
+                </div>
+                <p class="hero-tagline">Next-Generation Compression. Clinically Engineered.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="solution">
+        <video autoplay muted loop id="solution-video">
+            <source src="muscle.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="container">
+            <h2>Compression Therapy System Integrating MicroFilament Artificial Muscle</h2>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="mission">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p class="mission-text">To improve lives with the next generation of compression therapy, delivering superior outcomes while reducing healthcare costs globally.</p>
+        </div>
+    </section>
+
+    <!-- The Problem Section -->
+    <section id="problem" class="problem">
+        <div class="container">
+            <h2>The problem</h2>
+            <p>We know compression therapy works, but current options are rigid, hard to don, and deliver inconsistent pressure over time. Static garments lose compression with movement and swelling changes, pumps are bulky and noisy, and neither provides real-time feedback or personalization. The result is poor adherence, variable dosing, skin complications, and costly clinician time to size, refit, and monitor patients effectively at scale.</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-intro">
+        <div class="container">
+            <div class="about-copy">
+                <h2>We knew we could do better.</h2>
+                <p>SmarTex is an Australian medtech spinout from UNSW Sydney, founded by engineers, clinicians, and operators. We apply microfilament artificial muscle technology to create adaptive, sensor-ready compression garments that actively maintain therapeutic dose, conform to changing limb shape, and stay comfortable. This is the next generation of compression therapy—precise, personalized, and easy to use at home and in clinic.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology-section">
+        <div class="container">
+            <div class="mission-vision">
+                <div class="mission-box">
+                    <h3>Our Technology</h3>
+                    <p>Revolutionizing patient outcomes through wearable smart garments integrating hydraulic artificial muscles with precision-controlled, adaptive therapeutic compression.</p>
+                </div>
+                <div class="technology-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="lab.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="about" class="timeline-section">
+        <div class="container">
+            <h2>Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2018</div>
+                    <div class="timeline-content">
+                        <h4>Research Foundation</h4>
+                        <p>Six years of validated research with published papers in leading journals.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-content">
+                        <h4>Core Technology Patented</h4>
+                        <p>Exclusive license for PCT/AU2021/050924 covering our world-first technology.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h4>Award Recognition</h4>
+                        <p>Recipient of the ECA Startup Fellowship and Tyree IHealthE Innovation Catalyst Awards.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h4>UNSW Spinout</h4>
+                        <p>SmarTex officially launches as a UNSW Sydney spinout company.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <h4>Seed Funding Secured</h4>
+                        <p>Successful seed funding round to accelerate development and clinical trials.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Team Section -->
-    <section class="team">
+    <section id="team" class="team-section">
         <div class="container">
             <h2>Meet Our Founders & Advisors</h2>
             <p class="section-subtitle">Combining world-class research, clinical expertise, and business acumen</p>
-            
             <div class="team-grid">
                 <div class="team-card">
                     <div class="team-avatar">PP</div>
@@ -285,28 +149,24 @@
                     <div class="role">CEO & Co-Founder</div>
                     <div class="bio">Postdoctoral Fellow, Graduate School of Biomedical Engineering, UNSW Sydney, Australia</div>
                 </div>
-
                 <div class="team-card">
                     <div class="team-avatar">TD</div>
                     <h3>Thanh Nho Do</h3>
                     <div class="role">CTO & Co-Founder</div>
                     <div class="bio">Scientia Senior Lecturer, Graduate School of Biomedical Engineering, UNSW Sydney, Australia</div>
                 </div>
-
                 <div class="team-card">
                     <div class="team-avatar">NL</div>
                     <h3>Nigel Lovell</h3>
                     <div class="role">Technology Advisor & Co-Founder</div>
                     <div class="bio">Scientia Professor, Head of Graduate School of Biomedical Engineering, UNSW Sydney, Australia</div>
                 </div>
-
                 <div class="team-card">
                     <div class="team-avatar">MC</div>
                     <h3>Michael Cartmill</h3>
                     <div class="role">Business Development & Co-Founder</div>
                     <div class="bio">Co-Founder & CEO, Cordis Asset Management, Australia</div>
                 </div>
-
                 <div class="team-card">
                     <div class="team-avatar">ST</div>
                     <h3>Shannon Thomas</h3>
@@ -317,13 +177,55 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-left">
+                <h2>Connect With Us</h2>
+                <p class="section-subtitle">Interested in learning more about investment opportunities?</p>
+            </div>
+            <div class="contact-right">
+                <p>SmarTex Compression Therapies is seeking strategic partners and investors to accelerate our mission of revolutionizing compression therapy globally.</p>
+                <a href="mailto:info@smartexcompression.com" class="cta-button">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 SmarTex Compression Therapies Pty Ltd. All rights reserved.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.8rem;">PCT/AU2021/050924 | UNSW Technology Spinout</p>
-            <p style="margin-top: 1rem;"><a href="smartex-website.html">← Back to Home</a></p>
+        <div class="footer-container">
+            <div class="footer-address">
+                <p>Sydney, Australia</p>
+            </div>
+            <div class="footer-social">
+                <a href="mailto:info@smartexcompression.com" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </a>
+                <a href="#" target="_blank" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+                <a href="#" target="_blank" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 SmarTex Compression Therapies Pty Ltd.</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        const nav = document.querySelector('nav');
+        const heroSection = document.querySelector('.hero');
+
+        window.addEventListener('scroll', () => {
+            const heroHeight = heroSection.offsetHeight;
+            if (window.scrollY > heroHeight) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
